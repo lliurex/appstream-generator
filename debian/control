@@ -1,0 +1,58 @@
+Source: appstream-generator
+Section: misc
+Priority: optional
+Maintainer: Matthias Klumpp <mak@debian.org>
+Build-Depends: debhelper-compat (= 12),
+               dh-dlang,
+               docbook-xml,
+               docbook-xsl,
+               ffmpeg,
+               gir-to-d (>= 0.22),
+               libappstream-compose-dev (>= 0.15.1),
+               libappstream-dev (>= 0.15.0),
+               libarchive-dev (>= 3.2),
+               libcurl4-gnutls-dev (>= 7.62) | libcurl-dev (>= 7.62),
+               libgirepository1.0-dev,
+               libglibd-2.0-dev (>= 2.2),
+               libjs-highlight.js,
+               libjs-jquery-flot,
+               liblmdb-dev,
+               meson (>= 0.46),
+               xsltproc,
+               ldc,
+			   libsoup2.4-dev,
+			   libgdk-pixbuf2.0-dev,
+			   librsvg2-dev,
+			   libcairo2-dev,
+			   libfreetype6-dev,
+			   libfontconfig1-dev,
+			   libpango1.0-dev,
+               libappstream-compose-dev
+Rules-Requires-Root: no
+Standards-Version: 4.6.0
+Homepage: https://github.com/ximion/appstream-generator
+Vcs-Git: https://salsa.debian.org/pkgutopia-team/appstream-generator.git
+Vcs-Browser: https://salsa.debian.org/pkgutopia-team/appstream-generator
+
+Package: appstream-generator
+Architecture: any
+Depends: libjs-highlight.js,
+         libjs-jquery-flot,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: ffmpeg,
+            optipng
+Description: Generator for AppStream metadata
+ AppStream is a cross-distribution effort for creating and sharing
+ metadata of software components available in the package repositories
+ of a distribution.
+ It provides specifications for an unified software component metadata format
+ as well as tools to read, write and validate the metadata.
+ .
+ This package contains a tool to generate collection metadata from package
+ repositories adapted to LliureX requiriments.
+ It will extract icons, download screenshots, validate and transform the
+ metadata and return XML or YAML files that can be read by AppStream clients,
+ such as software centers.
+ The `appstream-generator` tool will also generate issue reports as
+ JSON documents and HTML pages.

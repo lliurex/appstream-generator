@@ -1,0 +1,37 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+#export DH_VERBOSE=1
+
+include /usr/share/dh-dlang/dlang-flags.mk
+
+ASGEN_FLAGS := --prefix=/usr \
+		--buildtype=plain \
+		-Ddownload-js=false
+
+INSTALL_DIR := $(CURDIR)/debian/appstream-generator
+INSTALLED_TEMPLATE_JSDIR := $(INSTALL_DIR)/usr/share/appstream/templates/default/static/js
+
+# explicitly disable network-dependent tests
+export ASGEN_TESTS_NO_NET=yes
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- $(ASGEN_FLAGS)
+
+override_dh_install:
+	dh_install
+
+	rm -f $(INSTALLED_TEMPLATE_JSDIR)/.gitignore
+	mkdir -p $(INSTALLED_TEMPLATE_JSDIR)/
+	ln -s /usr/share/javascript/jquery-flot/ $(INSTALLED_TEMPLATE_JSDIR)/flot
+
+	mkdir -p $(INSTALLED_TEMPLATE_JSDIR)/jquery
+	ln -s /usr/share/javascript/jquery/jquery.min.js $(INSTALLED_TEMPLATE_JSDIR)/jquery/jquery.min.js
+
+	mkdir -p $(INSTALLED_TEMPLATE_JSDIR)/highlight
+	ln -s /usr/share/javascript/highlight.js/highlight.min.js $(INSTALLED_TEMPLATE_JSDIR)/highlight/highlight.pack.js
+
+override_dh_missing:
+	dh_missing --fail-missing

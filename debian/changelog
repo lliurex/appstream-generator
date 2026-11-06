@@ -1,0 +1,335 @@
+appstream-generator (0.8.8-0lliurex) jammy; urgency=medium
+
+  * Forked from github.com/ximion/appstream-generator
+  * Add support for LliureX own Zomandos
+
+ -- Juanma1980 <juanma1980@gmail.com>  Fri, 06 Nov 2026 10:35:13 +0100
+
+appstream-generator (0.8.6-2) unstable; urgency=medium
+
+  * Add fix-32bit-build.patch: Fix builds on 32bit architectures
+
+ -- Matthias Klumpp <mak@debian.org>  Wed, 22 Dec 2021 22:14:55 +0100
+
+appstream-generator (0.8.6-1) unstable; urgency=medium
+
+  * New upstream version: 0.8.6
+  * Bump standards version: No changes needed
+
+ -- Matthias Klumpp <mak@debian.org>  Wed, 22 Dec 2021 19:38:22 +0100
+
+appstream-generator (0.8.5-1) unstable; urgency=medium
+
+  * New upstream version: 0.8.5
+  * Raise build-dependency on AppStream to 0.14.5
+
+ -- Matthias Klumpp <mak@debian.org>  Sat, 28 Aug 2021 23:10:08 +0200
+
+appstream-generator (0.8.4-1) unstable; urgency=medium
+
+  * New upstream version: 0.8.4
+  * Raise build-dependency on AppStream to 0.14.2
+  * Build-depend on libcurl instead of libsoup
+  * Bump standards version: No changes needed
+
+ -- Matthias Klumpp <mak@debian.org>  Tue, 02 Mar 2021 10:38:32 +0100
+
+appstream-generator (0.8.3-1) unstable; urgency=medium
+
+  * New upstream version: 0.8.3
+  * Drop all patches: Applied upstream
+  * Build-depend on libappstream-compose-dev
+
+ -- Matthias Klumpp <mak@debian.org>  Tue, 02 Feb 2021 20:20:04 +0100
+
+appstream-generator (0.8.2-2) unstable; urgency=medium
+
+  * Add explicit-no-network.patch: Allow one to disable network-dependent
+    tests explicitly.
+    - On a few builders at Debian, the network autodetection seems to fail,
+      so we now disable these tests explicitly via an env var.
+
+ -- Matthias Klumpp <mak@debian.org>  Thu, 14 May 2020 19:59:53 +0200
+
+appstream-generator (0.8.2-1) unstable; urgency=medium
+
+  * New upstream version: 0.8.2
+  * Build-depend on docbook-xml explicitly (Closes: #958460)
+  * Drop dependency on curl
+  * Add build dependency on libsoup2.4-dev
+  * Bump dependency on GLibD to >= 2.2
+    - This surprisingly fixes linkage of libglibd, and
+      therefore closes: #959893
+      Possibly GLibD was miscompiled before in an LDC
+      transition to trigger this issue. We will have to
+      keep an eye on this, so the problem doesn't reappear.
+
+ -- Matthias Klumpp <mak@debian.org>  Tue, 12 May 2020 22:26:42 +0200
+
+appstream-generator (0.8.1-1) unstable; urgency=medium
+
+  * New upstream version: 0.8.1
+  * Bump minimum build dependency version on libappstream-dev
+  * Update standards version: No change needed
+  * Mark d/rules as not requiring root
+
+ -- Matthias Klumpp <mak@debian.org>  Mon, 20 Jan 2020 20:48:41 +0100
+
+appstream-generator (0.8.0-2) unstable; urgency=medium
+
+  * Depend on gir-to-d >= 0.20
+    - The old version had an issues with newer GIR versions,
+      causing the package to FTBFS (Closes: #942379)
+
+ -- Matthias Klumpp <mak@debian.org>  Fri, 08 Nov 2019 22:56:06 +0100
+
+appstream-generator (0.8.0-1) unstable; urgency=medium
+
+  * New upstream version: 0.8.0
+  * Bump build-dependency on AppStream
+  * Bump changes version: No changes needed
+  * Depend on ffmpeg for the unit tests
+  * Drop dependency on dcontainers: No longer needed
+  * Simplify d/watch file
+
+ -- Matthias Klumpp <mak@debian.org>  Tue, 24 Sep 2019 21:06:34 +0200
+
+appstream-generator (0.7.7-1) unstable; urgency=medium
+
+  * New upstream version: 0.7.7
+
+ -- Matthias Klumpp <mak@debian.org>  Sun, 24 Feb 2019 19:04:32 +0100
+
+appstream-generator (0.7.6-1) unstable; urgency=medium
+
+  * New upstream version: 0.7.6
+  * Build-depend on AppStream 0.12.5 and gir-to-d <= 0.18
+
+ -- Matthias Klumpp <mak@debian.org>  Sun, 10 Feb 2019 21:32:08 +0100
+
+appstream-generator (0.7.5-1) unstable; urgency=medium
+
+  * New upstream version: 0.7.5
+  * Switch to dh compat level 12
+  * Drop build-dep on mustache-d
+  * Bump standards version (no changes needed)
+
+ -- Matthias Klumpp <mak@debian.org>  Fri, 04 Jan 2019 18:12:04 +0100
+
+appstream-generator (0.7.4-1) unstable; urgency=medium
+
+  * New upstream version: 0.7.4
+  * Bump standards version: No changes needed
+  * Build-depend on GLibD instead of GLib
+
+ -- Matthias Klumpp <mak@debian.org>  Sat, 04 Aug 2018 16:52:48 +0800
+
+appstream-generator (0.7.3-1) unstable; urgency=medium
+
+  * New upstream version: 0.7.3
+  * Ensure we build against libdcontainers-dev >= 0.8.0~alpha.6
+    - This ensures we build against a version of the library which
+      does not cause asgen to crash.
+  * Drop all patches: Applied upstream
+
+ -- Matthias Klumpp <mak@debian.org>  Thu, 26 Apr 2018 19:04:02 +0200
+
+appstream-generator (0.7.2-2) unstable; urgency=medium
+
+  * debian-index-threadsafe.patch: Make package index threadsafe again
+
+ -- Matthias Klumpp <mak@debian.org>  Tue, 17 Apr 2018 10:28:56 +0200
+
+appstream-generator (0.7.2-1) unstable; urgency=medium
+
+  * New upstream version: 0.7.2
+  * Drop patches: Applied upstream
+  * Build-depend on gir-to-d >= 0.15
+  * Bump standards version: No changes needed
+
+ -- Matthias Klumpp <mak@debian.org>  Tue, 17 Apr 2018 08:16:56 +0200
+
+appstream-generator (0.7.1-3) unstable; urgency=medium
+
+  * fix-32bit-build.patch: Update patch
+
+ -- Matthias Klumpp <mak@debian.org>  Fri, 06 Apr 2018 21:28:48 +0200
+
+appstream-generator (0.7.1-2) unstable; urgency=medium
+
+  * fix-32bit-build.patch: Fix FTBFS on 32bit architectures
+
+ -- Matthias Klumpp <mak@debian.org>  Fri, 06 Apr 2018 20:16:16 +0200
+
+appstream-generator (0.7.1-1) unstable; urgency=medium
+
+  * New upstream version: 0.7.1
+  * Build-depend on gir-to-d (>= 0.14)
+
+ -- Matthias Klumpp <mak@debian.org>  Fri, 06 Apr 2018 17:47:44 +0200
+
+appstream-generator (0.7.0-1) unstable; urgency=medium
+
+  * New upstream version: 0.7.0
+  * Drop patches: Applied upstream
+  * Update Vcs-* URLs for switch to Salsa
+  * Bump dh compat level to 11
+  * Use dh-dlang
+  * Update dependencies
+    - Build-dep libappstream-dev >= 0.12.0
+    - New build-dep libdcontainers-dev
+
+ -- Matthias Klumpp <mak@debian.org>  Wed, 04 Apr 2018 20:44:24 +0200
+
+appstream-generator (0.6.8-2) unstable; urgency=medium
+
+  * Use dh_missing instead of dh_install --list-missing
+  * girtod0.13-compat.patch: Add compatibility with gir-to-d >= 0.13
+
+ -- Matthias Klumpp <mak@debian.org>  Thu, 09 Nov 2017 12:14:05 +0100
+
+appstream-generator (0.6.8-1) unstable; urgency=medium
+
+  * New upstream version: 0.6.8
+    - Builds with Meson 0.43 (Closes: #880887)
+  * d/rules: Update build flag name
+  * Bump dependency on LDC to ensure we build with the latest
+    version of the compiler
+
+ -- Matthias Klumpp <mak@debian.org>  Mon, 06 Nov 2017 23:12:42 +0100
+
+appstream-generator (0.6.7-1) unstable; urgency=medium
+
+  * New upstream version: 0.6.7
+  * Bump build-dep on gir-to-d to include the armhf NEON fix
+
+ -- Matthias Klumpp <mak@debian.org>  Mon, 02 Oct 2017 22:24:52 +0200
+
+appstream-generator (0.6.6-1) unstable; urgency=medium
+
+  * New upstream version 0.6.6
+
+ -- Matthias Klumpp <mak@debian.org>  Fri, 22 Sep 2017 21:28:45 +0200
+
+appstream-generator (0.6.5-1) unstable; urgency=medium
+
+  * New upstream version: 0.6.5
+  * Use the built-in Meson support from debhelper
+  * Drop all patches: Applied upstream
+  * Update debian/copyright
+  * Add missing dependency on libgirepository1.0-dev
+  * Bump standards version: No changes needed
+
+ -- Matthias Klumpp <mak@debian.org>  Sun, 02 Jul 2017 17:08:14 +0200
+
+appstream-generator (0.6.2-1) unstable; urgency=medium
+
+  * New upstream version: 0.6.2
+  * test-fixes.patch: Make tests work again
+
+ -- Matthias Klumpp <mak@debian.org>  Tue, 24 Jan 2017 22:46:42 +0100
+
+appstream-generator (0.6.1-1) unstable; urgency=medium
+
+  * New upstream version: 0.6.1
+  * Drop all patches: Applied upstream
+
+ -- Matthias Klumpp <mak@debian.org>  Mon, 26 Dec 2016 22:58:05 +0100
+
+appstream-generator (0.6.0-5) unstable; urgency=medium
+
+  * Fix build on armhf by compiling without NEON
+
+ -- Matthias Klumpp <mak@debian.org>  Sat, 15 Oct 2016 22:32:32 +0200
+
+appstream-generator (0.6.0-4) unstable; urgency=medium
+
+  * Execute testsuite directly
+
+ -- Matthias Klumpp <mak@debian.org>  Sat, 15 Oct 2016 18:09:04 +0200
+
+appstream-generator (0.6.0-3) unstable; urgency=medium
+
+  * Print logs from failing tests
+
+ -- Matthias Klumpp <mak@debian.org>  Sun, 09 Oct 2016 15:46:42 +0200
+
+appstream-generator (0.6.0-2) unstable; urgency=medium
+
+  * Properly remove build directory on clean
+  * find-mustache-d.patch: Make finding mustache-d more robust
+  * Tighten dependencies
+
+ -- Matthias Klumpp <mak@debian.org>  Sat, 08 Oct 2016 16:48:02 +0200
+
+appstream-generator (0.6.0-1) unstable; urgency=medium
+
+  * New upstream version: 0.6.0
+  * Build with the LDC compiler by default
+  * Drop patches: Applied upstream
+  * d/rules: Use the Meson buildsystem
+  * fix-template-install.patch: Correctly install symlinks for templates
+  * Update debian/copyright
+
+ -- Matthias Klumpp <mak@debian.org>  Mon, 03 Oct 2016 19:26:36 +0200
+
+appstream-generator (0.5.0-3) unstable; urgency=medium
+
+  * 32bit-build-fix.patch: Fix FTBFS on 32bit architectures
+
+ -- Matthias Klumpp <mak@debian.org>  Fri, 02 Sep 2016 20:58:20 +0200
+
+appstream-generator (0.5.0-2) unstable; urgency=medium
+
+  * non-amd64-build-fix.patch: Attempt to fix weird FTBFS
+    on !amd64 architectures
+
+ -- Matthias Klumpp <mak@debian.org>  Wed, 31 Aug 2016 22:15:38 +0200
+
+appstream-generator (0.5.0-1) unstable; urgency=medium
+
+  * New upstream release: 0.5.0
+  * Adjust dependencies
+  * Fix linking issue with GDC/Phobos in unstable
+
+ -- Matthias Klumpp <mak@debian.org>  Tue, 30 Aug 2016 22:56:10 +0200
+
+appstream-generator (0.4.0-1) unstable; urgency=medium
+
+  * New upstream release: 0.4.0
+    - Closes: #828713
+  * Use pristine-tar
+  * Replace dub hack with a different workaround
+    - Still ugly, but does not involve patching the sources anymore.
+
+ -- Matthias Klumpp <mak@debian.org>  Tue, 12 Jul 2016 20:14:32 +0200
+
+appstream-generator (0.3.0-1) unstable; urgency=medium
+
+  * New upstream release: 0.3.0
+  * Drop ftbfs-non64bit.patch: Applied upstream
+  * Recommend optipng
+
+ -- Matthias Klumpp <mak@debian.org>  Tue, 24 May 2016 20:02:24 +0200
+
+appstream-generator (0.2.0-2) unstable; urgency=medium
+
+  * ftbfs-non64bit.patch: Fix FTBFS on non-64bit architectures
+
+ -- Matthias Klumpp <mak@debian.org>  Mon, 25 Apr 2016 20:38:30 +0200
+
+appstream-generator (0.2.0-1) unstable; urgency=medium
+
+  * New upstream release: 0.2.0
+  * Drop JS sources: No longer needed
+  * Update debian/rules for the removed JS libraries
+  * Adapt debian/copyright
+  * Do not run tests until dub is fixed
+
+ -- Matthias Klumpp <mak@debian.org>  Sun, 24 Apr 2016 18:36:12 +0200
+
+appstream-generator (0.1.0-1) unstable; urgency=medium
+
+  * Initial release (Closes: #820715)
+
+ -- Matthias Klumpp <mak@debian.org>  Mon, 18 Apr 2016 18:50:04 +0200
