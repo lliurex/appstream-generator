@@ -5,3 +5,4 @@ For packaging:
 	* Disable lliurex pinning if there're conflicts
 	* Install build depends
 	* The included debian folder is all you need
+	* Remember that this is a quilt package, so the original sources must be provided
