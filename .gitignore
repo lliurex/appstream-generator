@@ -1,4 +1,5 @@
 build/
+.pc/
 .dub
 docs.json
 dub.selections.json

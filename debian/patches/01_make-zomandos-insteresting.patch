@@ -1,0 +1,19 @@
+--- a/src/asgen/engine.d
++++ b/src/asgen/engine.d
+@@ -184,6 +184,7 @@
+      * Populate the contents index with new contents data. While we are at it, we can also mark
+      * some uninteresting packages as to-be-ignored, so we don't waste time on them
+      * during the following metadata extraction.
++	 * LliureX Zomandos use the path /usr/share/zero-center/zmds so add it to interesting check 
+      *
+      * Returns: True in case we have new interesting packages, false otherwise.
+      **/
+@@ -199,6 +200,8 @@
+                     return true;
+                 if (c.startsWith ("/usr/share/metainfo/"))
+                     return true;
++                if (c.startsWith ("/usr/share/zero-center/zmds"))
++                    return true;
+             }
+ 
+             if (pkg.gst.isNull)
