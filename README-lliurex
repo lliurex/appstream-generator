@@ -1,0 +1,7 @@
+The v0.8.8 is the latest release that can be build for Lliurex Jammy, that is the target release at this moment (20261106)
+For manual build read the README.md
+For packaging:
+	* Enable ubuntu repos
+	* Disable lliurex pinning if there're conflicts
+	* Install build depends
+	* The included debian folder is all you need
